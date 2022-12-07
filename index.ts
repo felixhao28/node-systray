@@ -255,7 +255,10 @@ export default class SysTray {
         })
         conf.menu.items.forEach(updateCheckedInLinux)
         let counter = {id: 1}
-        conf.menu.items.forEach(_ => addInternalId(this.internalIdMap, _ as MenuItemEx, counter))
+        for (const key in conf.menu.items) {
+          await resolveIcon(conf.menu.items[key]);
+          addInternalId(this.internalIdMap, conf.menu.items[key] as MenuItemEx, counter);
+        }
         await resolveIcon(conf.menu)
         if (conf.debug) {
           this._rl.on('line', data => _debug('onLine', data))

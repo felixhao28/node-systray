@@ -28,6 +28,7 @@ const item2 = {
   tooltip: 'bb',
   checked: false,
   enabled: true,
+  icon: os.platform() === 'win32' ? './logo_s.ico' : './logo_s.png',
   // hidden
   hidden: false,
   // add a submenu item
@@ -36,6 +37,7 @@ const item2 = {
     tooltip: 'this is a submenu item',
     checked: false,
     enabled: true,
+    icon: os.platform() === 'win32' ? './logo_s.ico' : './logo_s.png',
     click: () => {
       // open the url
       console.log('open the url')

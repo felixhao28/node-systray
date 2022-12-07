@@ -1,6 +1,6 @@
 {
   "name": "systray2",
-  "version": "2.1.4",
+  "version": "2.1.5",
   "description": "An systray libray for nodejs, more updated than the original systray",
   "main": "index.js",
   "typings": "index.d.ts",
@@ -35,7 +35,7 @@
     "@types/debug": "^4.1.7",
     "@types/fs-extra": "^9.0.13",
     "@types/mocha": "^9.0.0",
-    "@types/node": "^17.0.1",
+    "@types/node": "^17.0.45",
     "@typescript-eslint/eslint-plugin": "^5.7.0",
     "@typescript-eslint/eslint-plugin-tslint": "^5.7.0",
     "@typescript-eslint/parser": "^5.7.0",
