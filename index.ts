@@ -25,6 +25,7 @@ function _debug(msgType: string, ...msg: any[]) {
   return
 }
 
+
 export interface MenuItem {
   title: string
   tooltip: string
@@ -34,6 +35,9 @@ export interface MenuItem {
   items?: MenuItem[]
   icon?: string
   isTemplateIcon?: boolean
+  callback?: {
+    click?: () => void
+  };
 }
 
 interface MenuItemEx extends MenuItem {
@@ -260,6 +264,14 @@ export default class SysTray {
         if (conf.debug) {
           this._rl.on('line', data => _debug('onLine', data))
         }
+        this._rl.on('line', (line: string) => {
+          const action: ClickEvent = JSON.parse(line)
+          if (action.type === 'clicked') {
+            const item = this.internalIdMap.get(action.__id)
+            action.item = Object.assign(item, action.item)
+            item?.callback?.click?()
+          }
+        })
         this.onReady(() => {
           this.writeLine(JSON.stringify(menuTrimmer(conf.menu)))
           resolve()

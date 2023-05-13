@@ -1,7 +1,7 @@
 {
-  "name": "systray2",
-  "version": "2.1.4",
-  "description": "An systray libray for nodejs, more updated than the original systray",
+  "name": "systray3",
+  "version": "3.0.0",
+  "description": "A systray library for nodejs, more updated than the more updated systray",
   "main": "index.js",
   "typings": "index.d.ts",
   "scripts": {
@@ -18,19 +18,19 @@
   "pre-commit": [],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/felixhao28/node-systray.git"
+    "url": "git+https://github.com/DarVoid/node-systray.git"
   },
   "keywords": [
     "systray",
     "tray",
     "gui"
   ],
-  "author": "felixhao28 & zaaack",
+  "author": "DarVoid & Toby Selway",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/felixhao28/node-systray/issues"
+    "url": "https://github.com/DarVoid/node-systray/issues"
   },
-  "homepage": "https://github.com/felixhao28/node-systray#readme",
+  "homepage": "https://github.com/DarVoid/node-systray#readme",
   "devDependencies": {
     "@types/debug": "^4.1.7",
     "@types/fs-extra": "^9.0.13",
