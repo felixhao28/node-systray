@@ -78,7 +78,7 @@ systray.ready().then(() => {
 This example shows how to use checkbox-style menu items and menus with sub menu items.
 
 ```ts
-import SysTray from 'systray2';
+import SysTray from 'systray3';
 import os from 'os'
 
 /**
