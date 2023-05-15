@@ -17,7 +17,7 @@ yarn add systray3
 This example shows how to display a menu with two menu items, and how to handle mouse click events and exit the tray process.
 
 ```ts
-import SysTray from 'systray2';
+import SysTray from 'systray3';
 import os from 'os'
 
 const item = {
