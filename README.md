@@ -5,9 +5,9 @@
 
 ## Install
 ```sh
-npm i systray2
+npm i systray3
 # or
-yarn add systray2
+yarn add systray3
 ```
 
 ## Usage
