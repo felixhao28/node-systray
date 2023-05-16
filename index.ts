@@ -100,7 +100,15 @@ const getTrayBinPath = async (debug: boolean = false, copyDir: boolean | string 
   const binName = ({
     win32: `tray_windows${debug ? '' : '_release'}.exe`,
     darwin: `tray_darwin${debug ? '' : '_release'}`,
-    linux: `tray_linux${debug ? '' : '_release'}`
+    linux: `tray_linux${debug ? '' : '_release'}`,
+    aix: '',
+    android: '',
+    cygwin: '',
+    freebsd: '',
+    haiku: '',
+    netbsd: '',
+    openbsd: '',
+    sunos: '',
   })[process.platform]
   let binPath = path.join('.', 'traybin', binName)
   if (!await fs.pathExists(binPath)) {
@@ -119,6 +127,7 @@ const getTrayBinPath = async (debug: boolean = false, copyDir: boolean | string 
       await fs.ensureDir(copyDir)
       await fs.copy(binPath, copyDistPath)
     }
+    // TODO: Set +x permission to file (on linux)
 
     return copyDistPath
   }
@@ -268,8 +277,7 @@ export default class SysTray {
           const action: ClickEvent = JSON.parse(line)
           if (action.type === 'clicked') {
             const item = this.internalIdMap.get(action.__id)
-            action.item = Object.assign(item, action.item)
-            item?.callback?.click?()
+            item?.callback?.click?.apply(this)
           }
         })
         this.onReady(() => {
